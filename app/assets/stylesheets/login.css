@@ -1,0 +1,146 @@
+@import "application.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.brand {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0px 0px auto;
+}
+
+#login-box {
+    position: relative;
+    margin: 0% auto;
+    width: 600px;
+    height: 400px;
+    background: var(--Hover);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-top: 5px solid var(--Accent-1);
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.form-control {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+    background-color: var(--Background);
+    border-radius: 2em;
+    color: var(--Secondary-Text);
+}
+
+.form-control:focus {
+    border-bottom: 2px solid var(--Background);
+    color: var(--Primary-Text);
+    transition: 0.2s ease;
+}
+
+.signup-button {
+    float: left;
+    margin-top: 25px;
+    transition: 0.1s ease-in;
+}
+
+.or {
+    position: absolute;
+    top: 180px;
+    left: 280px;
+    width: 40px;
+    height: 40px;
+    background: var(--Accent-1);
+    color: var(--Background);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    background: url('https://goo.gl/YbktSj');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 28px;
+    text-align: center;
+}
+
+button.social-signin {
+    margin-bottom: 1em;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 2em;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    color: var(--Primary-Text);
+}
+button.social-signin:hover {
+    background-position: right center;
+    text-decoration: none;
+}
+button.social-signin:active {
+    transform: scale(0.95);
+}
+
+button.social-signin.facebook {
+    box-shadow: 0px 0px 14px -9px #32508E;
+    background-image: linear-gradient(45deg, #32348F 0%, #32508E 51%, #32348F 100%);
+}
+
+button.social-signin.X {
+    box-shadow: 0px 0px 14px -9px #212E33;
+    background-image: linear-gradient(45deg, #000000 0%, #212E33 51%, #000000 100%);
+}
+
+button.social-signin.google {
+    box-shadow: 0px 0px 14px -9px #DE6A3A;
+    background-image: linear-gradient(45deg, #DD4B39 0%, #DE6A3A 51%, #DD4B39 100%);
+}

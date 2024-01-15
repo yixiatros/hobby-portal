@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag :login %>
+
+<div class="brand"><%= link_to 'ThreadVerse', home_index_path  ,class: "navbar-brand"%><b>TM</b></a></div>
+
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+          <%= @user.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.text_field :email, placeholder: "E-mail", class: "form-control" %>
+      <%= form.text_field :username, placeholder: "Username", class: "form-control" %>
+      <%= form.password_field :password, placeholder: "Password", class: "form-control" %>
+      <%= form.password_field :password_conformation, placeholder: "Retype password", class: "form-control" %>
+      <%= form.submit 'Sign me up', class: "login-button signup-button" %>
+    <% end %>
+  </div>
+
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin X">Log in with X</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+
+  <div class="or">OR</div>
+</div>
