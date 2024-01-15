@@ -4,12 +4,16 @@
 <header>
   <nav class="navbar">
     <div class="container">
-      <%= link_to 'ThreadVerse', home_index_path, class: "navbar-brand"%>
+      <%= link_to 'ThreadVerse', root_path, class: "navbar-brand"%>
       <div class="search-box" style="font-size: 24px;">
         <input class="search-input" type="text" oninput="this.setAttribute('value',this.value)">
         <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
       </div>
-      <%= link_to 'Log In', sign_up_path, class: "login-button" %>
+      <% if @user %>
+        <%= button_to "Log Out", logout_path, class: "logout-button", method: :delete %>
+      <% else %>
+        <%= link_to 'Log In', log_in_path, class: "login-button" %>
+      <% end %>
     </div>
   </nav>
 </header>

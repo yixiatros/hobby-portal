@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  get 'log_in', to: 'sessions#login'
+  post 'log_in', to: 'sessions#create'
   get 'sign_up', to: 'registrations#register'
   post 'sign_up', to: 'registrations#create'
+  delete 'logout', to: 'sessions#destroy'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
