@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag :post %>
+
+<% if Current.user %>
+  <div class="create-post">
+    <%= form_with model: @post, url: post_path do |form| %>
+      <section class="content">
+        <%= form.text_area :content, class: 'form-control create-post-input', autofocus: true, placeholder: 'What\'s up?', cols: "30", rows: "15" %>
+      </section>
+      <div class="attach-to-post">
+        <%= form.file_field :attachment, class: 'file-input form-control' %>
+        <%= form.submit 'Post', class: 'post-button login-button btn btn-primary'%>
+      </div>
+    <% end %>
+  </div>
+<% end %>

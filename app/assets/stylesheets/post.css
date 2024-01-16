@@ -1,0 +1,100 @@
+@import "application.css";
+
+.create-post {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 120vw;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: -0.3em;
+}
+@media screen and (min-width: 32em) {
+    .content {
+        width: 80vw;
+    }
+}
+
+.create-post-input {
+    height: 5em;
+    resize: none;
+    border-radius: 0.5em 0.5em 0em 0em;
+    background-color: #222222;
+    font-weight: 400;
+    font-size: 15px;
+    width: 100%;
+}
+.create-post:focus {
+    border-bottom: 2px solid var(--Background);
+    transition: 0.2s ease;
+}
+.create-post-input:focus {
+    background-color: var(--Hover);
+    color: var(--Primary-Text);
+}
+.create-post-input::placeholder {
+    color: var(--Secondary-Text);
+}
+.create-post-input::-webkit-scrollbar {
+    width: 1em;
+}
+.create-post-input::-webkit-scrollbar-track {
+    border-radius: 0.2em;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.create-post-input::-webkit-scrollbar-thumb {
+    border-radius: 0.2em;
+    background-color: var(--Accent-1);
+    outline: 1px solid var(--Hover);
+}
+
+.attach-to-post {
+    position: relative;
+    display: inline-flex;
+    background-color: var(--Accent-1);
+    width: 100%;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    margin-top: -20em;
+}
+.file-input {
+    height: 200%;
+    background-color: var(--Accent-1);
+    color: var(--Background);
+    -webkit-margin-bottom-collapse: collapse;
+    margin-bottom: -0em;
+    padding-inline-start: 1em;
+    border-radius: 0em 0em 0.5em 0.5em;
+}
+.file-input:focus {
+    background-color: var(--Accent-1);
+    color: var(--Background);
+}
+input[type=file]::file-selector-button {
+    height: 40px;
+    border-radius: 2em;
+    background-color: var(--Background);
+    color: var(--Primary-Text);
+}
+input[type=file]::file-selector-button:hover {
+    background-color: var(--Hover);
+}
+
+.post-button {
+    height: 40px;
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    float: right;
+    padding: 10px 23px;
+    box-shadow: 0px 0px 14px -9px var(--Background);
+    background-image: linear-gradient(45deg, #222222 0%, var(--Background)  51%, #222222  100%);
+    color: var(--Primary-Text);
+}

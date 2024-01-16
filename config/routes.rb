@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  #resources :posts
+  resources :likes
+  resources :comments
+
+  post 'post', to: 'posts#create'
 
   get 'password/reset', to: 'password_resets#new'
   post 'password/reset', to: 'password_resets#create'
