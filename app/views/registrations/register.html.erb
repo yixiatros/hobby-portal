@@ -8,7 +8,7 @@
     <%= form_with model: @user, url: sign_up_path do |form| %>
       <% if @user.errors.any? %>
         <div class="alert alert-danger">
-          <%= @user.errors.full_messages.each do |message| %>
+          <% @user.errors.full_messages.each do |message| %>
             <div><%= message %></div>
           <% end %>
         </div>
@@ -19,7 +19,7 @@
       <%= form.password_field :password_conformation, placeholder: "Retype password", class: "form-control" %>
       <%= form.submit 'Sign me up', class: "login-button signup-button" %>
     <% end %>
-    <%= link_to 'Login', log_in_path, class: "changeLogin" %>
+    <%= link_to 'Login', log_in_path, class: "change-login" %>
   </div>
 
   <div class="right">

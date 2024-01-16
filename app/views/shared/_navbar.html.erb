@@ -1,0 +1,31 @@
+<header>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <%= link_to 'ThreadVerse', root_path, class: "navbar-brand"%>
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav w-100">
+          <li class="search-box mx-auto">
+            <input class="search-input" type="text" oninput="this.setAttribute('value',this.value)">
+            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+          </li>
+          <li class="nav-item dropdown ms-auto mb-lg-8">
+            <% if Current.user %>
+              <div class="btn-group dropstart">
+                <button type="button" class="login-button btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                  <%= Current.user.username %>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><button type="button" class="dropdown-item">Profile</button></li>
+                  <li><%= link_to "Change Password", edit_password_path, class: "dropdown-item" %></li>
+                  <li><%= button_to "Log Out", logout_path, class: "dropdown-item", type: "button", method: :delete %></li>
+                </ul>
+              </div>
+            <% else %>
+              <%= link_to 'Log In', log_in_path, class: "login-button" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

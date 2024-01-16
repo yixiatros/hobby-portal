@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag :login %>
+
+<div class="brand"><%= link_to 'ThreadVerse', root_path  ,class: "navbar-brand"%><b>TM</b></div>
+
+<div id="change-password-box">
+  <div>
+    <h1>Reset Password</h1>
+    <%= form_with url: password_reset_edit_path do |form| %>
+      <%= form.text_field :email, placeholder: "E-mail", class: "form-control" %>
+      <%= form.submit 'Reset Password', class: "login-button signup-button password-button" %>
+    <% end %>
+  </div>
+</div>

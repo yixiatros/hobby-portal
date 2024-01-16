@@ -10,7 +10,9 @@
       <%= form.password_field :password, placeholder: "Password", class: "form-control" %>
       <%= form.submit 'Log In', class: "login-button signup-button" %>
     <% end %>
-    <%= link_to 'Sign Up', sign_up_path, class: "changeLogin" %>
+    <%= link_to 'Sign Up', sign_up_path, class: "change-login" %>
+
+    <%= link_to 'Forgot Password', password_reset_path, class: "forgot-password" %>
   </div>
 
   <div class="right">

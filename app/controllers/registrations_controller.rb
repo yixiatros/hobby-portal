@@ -3,10 +3,6 @@ class RegistrationsController < ApplicationController
     @user = User.new
   end
 
-  def login
-    @user = User.new
-  end
-
   def create
     @user = User.create!(user_params)
     if @user.save

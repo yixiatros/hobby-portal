@@ -13,14 +13,28 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 10% 0px 0px auto;
+    margin: 8% 0px 0px auto;
 }
 
 #login-box {
     position: relative;
-    margin: 0% auto;
+    margin: 2% auto;
     width: 600px;
     height: 400px;
+    background: var(--Hover);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-top: 5px solid var(--Accent-1);
+}
+#change-password-box{
+    position: relative;
+    margin: 2% auto;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background: var(--Hover);
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -61,7 +75,6 @@ h1 {
 
 .form-control:focus {
     border-bottom: 2px solid var(--Background);
-    color: var(--Primary-Text);
     transition: 0.2s ease;
 }
 
@@ -70,17 +83,24 @@ h1 {
     margin-top: 25px;
 }
 
-.changeLogin {
+.change-login {
     float: right;
     text-decoration: underline;
     color: var(--Secondary-Text);
     margin-top: 35px;
     margin-inline-end: 20px;
 }
+.forgot-password {
+    float: left;
+    text-decoration: underline;
+    color: var(--Secondary-Text);
+    margin-top: 20px;
+    margin-inline-start: 35px;
+}
 
 .or {
     position: absolute;
-    top: 180px;
+    top: 173px;
     left: 280px;
     width: 40px;
     height: 40px;
@@ -100,9 +120,8 @@ h1 {
     padding: 40px;
     width: 300px;
     height: 400px;
-    background: url('https://goo.gl/YbktSj');
     background-size: cover;
-    background-position: center;
+    background: url('https://goo.gl/YbktSj') center;
     border-radius: 0 2px 2px 0;
 }
 
@@ -113,16 +132,21 @@ h1 {
     text-align: center;
 }
 
+.loginwith {
+    margin-top: -0.6em;
+    text-align: left;
+}
+
 button.social-signin {
-    margin-bottom: 1em;
-    padding: 10px 20px;
+    margin-bottom: 0.8em;
+    padding: 5px 20px;
     text-decoration: none;
     text-align: center;
     transition: 0.5s;
     background-size: 200% auto;
     border-radius: 2em;
     border: none;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -138,16 +162,19 @@ button.social-signin:active {
 }
 
 button.social-signin.facebook {
+    margin-top: -5em;
     box-shadow: 0px 0px 14px -9px #32508E;
     background-image: linear-gradient(45deg, #32348F 0%, #32508E 51%, #32348F 100%);
 }
-
 button.social-signin.X {
     box-shadow: 0px 0px 14px -9px #212E33;
     background-image: linear-gradient(45deg, #000000 0%, #212E33 51%, #000000 100%);
 }
-
 button.social-signin.google {
     box-shadow: 0px 0px 14px -9px #DE6A3A;
     background-image: linear-gradient(45deg, #DD4B39 0%, #DE6A3A 51%, #DD4B39 100%);
+}
+
+.password-button {
+    margin-inline-start: 1rem;
 }
