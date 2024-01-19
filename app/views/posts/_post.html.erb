@@ -1,17 +1,43 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Attachment:</strong>
-    <%= post.attachment %>
-  </p>
+<%= stylesheet_link_tag :post %>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
+<!--<div id="<%#= dom_id post %>">-->
+<!--  <p>-->
+<!--    <strong>Attachment:</strong>-->
+    <%#= post.attachment %>
+<!--  </p>-->
 
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
+<!--  <p>-->
+<!--    <strong>Content:</strong>-->
+    <%#= post.content %>
+<!--  </p>-->
 
+<!--  <p>-->
+<!--    <strong>User:</strong>-->
+    <%#= post.user_id %>
+<!--  </p>-->
+
+<!--</div>-->
+
+<div class="middle-of-screen">
+  <div class="card" id="<%= dom_id post %>">
+    <div class="top">
+      <div class="user_details">
+        <h3><%= post.user.username %>
+          <br>
+          <span class="hour">
+            <%= post.created_at.in_time_zone(+2).strftime("Posted on %B %d, %Y at %H:%M") %>
+          </span>
+        </h3>
+      </div>
+    </div>
+    <h4 class="message"><%= post.content %></h4>
+    <% if post.attachment? %>
+      <div class="imgBg">
+        <img src="<%= post.attachment %>" alt="posted-image" class="coverFull">
+      </div>
+    <% end %>
+    <div class="btns">
+    </div>
+    <div class="border"></div>
+  </div>
 </div>

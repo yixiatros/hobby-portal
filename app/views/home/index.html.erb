@@ -1,3 +1,13 @@
 <%= render partial: "shared/navbar" %>
 
-<%= render partial: "shared/create_post" %>
+<%= render partial: "posts/create_post" %>
+
+<div style="margin-top: 2em; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <h2>All Posts</h2>
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>

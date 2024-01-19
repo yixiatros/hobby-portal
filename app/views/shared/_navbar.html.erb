@@ -11,9 +11,7 @@
           <li class="nav-item dropdown ms-auto mb-lg-8">
             <% if Current.user %>
               <div class="btn-group dropstart">
-                <button type="button" class="login-button btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                  <%= Current.user.username %>
-                </button>
+                <button type="button" class="login-button btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"><%= Current.user.username %></button>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li><button type="button" class="dropdown-item">Profile</button></li>
                   <li><%= link_to "Change Password", edit_password_path, class: "dropdown-item" %></li>

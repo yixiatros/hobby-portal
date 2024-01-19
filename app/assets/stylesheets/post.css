@@ -35,6 +35,7 @@
     transition: 0.2s ease;
 }
 .create-post-input:focus {
+    margin-bottom: 1.7em;
     background-color: var(--Hover);
     color: var(--Primary-Text);
 }
@@ -98,3 +99,80 @@ input[type=file]::file-selector-button:hover {
     background-image: linear-gradient(45deg, #222222 0%, var(--Background)  51%, #222222  100%);
     color: var(--Primary-Text);
 }
+
+
+
+/* Post Preview */
+.middle-of-screen {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    position: relative;
+    width: 500px;
+    min-height: 100px;
+    background-color: var(--Hover);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15),
+    -5px -5px 5px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-top: 2px solid var(--Accent-1);
+    border-bottom: 2px solid var(--Accent-1);
+}
+.card-without-img{
+
+}
+.card .top .user_details h3 {
+    font-size: 18px;
+    color: var(--Secondary-Text);
+    font-weight: 900;
+    line-height: 1em;
+}
+.hour {
+    color: var(--Secondary-Text);
+    font-size: 15px;
+    font-weight: 500;
+}
+.message{
+    font-weight: 400;
+    margin-top: 5px;
+    color: var(--Primary-Text);
+    line-height: 1.5em;
+}
+.imgBg{
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 10px 0 15px;
+    margin-left: -21px;
+    overflow: hidden;
+}
+.coverFull{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+.border{
+    position: relative;
+    width: 100%;
+    height: 0.1em;
+    background: var(--Background);
+    margin-top: 15px;
+}
+@media (max-width: 640px){
+    .card{
+        width: 350px;
+    }
+    .imgBg{
+        width: 350px;
+    }
+}
+/* Post Preview */

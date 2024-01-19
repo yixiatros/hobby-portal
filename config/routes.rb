@@ -2,9 +2,8 @@
 
 Rails.application.routes.draw do
   #resources :posts
-  resources :likes
-  resources :comments
 
+  get 'posts', to: 'posts#index'
   post 'post', to: 'posts#create'
 
   get 'password/reset', to: 'password_resets#new'
