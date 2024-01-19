@@ -1,0 +1,107 @@
+@import "application.css";
+
+.collapse-uncollapse {
+    text-align: center;
+    background-color: var(--Accent-1);
+    width: 20px;
+    color: black;
+    font-size: 1.4em;
+    margin-left: 1em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+#collapse-uncollapse {
+    text-decoration: none;
+    color: black;
+}
+#collapse-uncollapse:hover {
+    cursor: pointer;
+}
+
+.contact-container {
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.contacts-info {
+    display: block;
+}
+
+.contact-list {
+    overflow: auto;
+    max-height: 19em;
+    margin-bottom: -0.5em;
+    padding: 1em;
+    background-color: var(--Hover);
+    color: var(--Primary-Text);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.48);
+    border-top: 2px solid var(--Accent-1);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.contact-list li, .add-contact {
+    list-style: none;
+    padding: 0.75em 1em;
+    border-radius: 1em;
+}
+.contact-list li:hover {
+    background-color: var(--Accent-1);
+    color: black;
+    cursor: pointer;
+}
+.contact-list::-webkit-scrollbar {
+    width: 0.5em;
+}
+.contact-list::-webkit-scrollbar-track {
+    border-radius: 0.2em;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.contact-list::-webkit-scrollbar-thumb {
+    border-radius: 0.2em;
+    background-color: var(--Accent-1);
+    outline: 1px solid var(--Hover);
+}
+
+.add-contact {
+    border-radius: 0;
+    background-color: var(--Accent-1);
+    color: black;
+}
+.add-contact:hover {
+    cursor: pointer;
+}
+
+.search-contact {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    background-color: #222222;
+    color: var(--Primary-Text);
+    padding: 0.5em;
+    padding-inline-start: 1em;
+    padding-inline-end: 1em;
+    border-bottom: 2px solid var(--Accent-1);
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+.search-contact:focus {
+    border-bottom: 3px solid var(--Accent-1);
+    transition: 0.2s ease;
+}
+
+#Contacts {
+    display: none;
+    padding: 1em;
+    background-color: var(--Hover);
+    color: var(--Primary-Text);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.48);
+    border-top: 2px solid var(--Accent-1);
+    border-bottom: 2px solid var(--Accent-1);
+    border-radius: 1em;
+    width: 13.5em;
+}
