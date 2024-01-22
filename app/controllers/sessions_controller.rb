@@ -1,6 +1,10 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
+class SessionsController < ApplicationController
   def login
+    if logged_in?
+      redirect_to root_path
+    end
   end
 
   def create
@@ -20,4 +24,19 @@ class SessionsController < ApplicationController
     redirect_to root_path, notice: 'Logged out'
   end
 
+  def omniauth
+    @user = User.find_or_create_by(uid: request.env['omniauth.auth']['uid'],
+                                   provider: request.env['omniauth.auth']['provider']) do |user|
+      user.username = request.env['omniauth.auth']['info']['name']
+      user.email = request.env['omniauth.auth']['info']['email']
+      user.password = SecureRandom.hex(10)
+    end
+
+    if @user.valid?
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      render :login
+    end
+  end
 end

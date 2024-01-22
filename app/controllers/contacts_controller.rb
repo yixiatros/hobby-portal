@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   # Get /contacts
   def index
-    @users = User.all
+    @users = User.all_except(Current.user)
   end
 
   # Post /contacts/add

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'password', to: 'passwords#edit', as: :edit_password
   patch 'password', to: 'passwords#update'
 
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
   get 'log_in', to: 'sessions#login'
   post 'log_in', to: 'sessions#create'
 
