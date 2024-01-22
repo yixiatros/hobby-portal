@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   #resources :posts
 
+  get 'contacts', to: 'contacts#index'
+  post 'contacts/add', to: 'contacts#add'
+
   get 'posts', to: 'posts#index'
   post 'post', to: 'posts#create'
 

@@ -9,6 +9,10 @@
     margin-left: 1em;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    transition: 0.1s ease-in-out;
+}
+.collapse-uncollapse:hover {
+    scale: 110%;
 }
 #collapse-uncollapse {
     text-decoration: none;
@@ -35,7 +39,7 @@
     overflow: auto;
     max-height: 19em;
     margin-bottom: -0.5em;
-    padding: 1em;
+    padding: 1em 1em 3em 1em;
     background-color: var(--Hover);
     color: var(--Primary-Text);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.48);
@@ -68,12 +72,24 @@
 }
 
 .add-contact {
+    z-index: 1000;
     border-radius: 0;
     background-color: var(--Accent-1);
     color: black;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
 }
 .add-contact:hover {
-    cursor: pointer;
+    border-radius: 0.4em;
+    scale: 105%;
+    font-weight: 800;
+
+}
+.add-contacts-link {
+    text-decoration: none;
+    color: black;
+    padding: 3em 2.8em;
 }
 
 .search-contact {

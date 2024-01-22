@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag :contacts %>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <div><%= render partial: "contacts/contact", locals: { contact: user} %></div>
+  <% end %>
+</div>

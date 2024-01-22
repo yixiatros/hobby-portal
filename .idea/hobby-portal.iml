@@ -156,6 +156,7 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="socialization" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
@@ -189,6 +190,7 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="socialization" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />

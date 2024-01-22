@@ -1,0 +1,8 @@
+<% if contact.id != Current.user.id %>
+  <div>
+    <%= form_with url: contacts_add_path do |form| %>
+      <%= form.hidden_field :user_id, :value => contact.id %>
+      <%= form.submit contact.username, class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

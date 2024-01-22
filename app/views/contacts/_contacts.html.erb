@@ -4,22 +4,14 @@
   <div class="collapse-uncollapse"><a id="collapse-uncollapse" onclick="collapse()">▼</a></div>
   <div id="contacts-info">
     <ul id="contact-list" class="contact-list">
-      <li>Contact</li>
-      <li>Contact1</li>
-      <li>Contact2</li>
-      <li>Contact3</li>
-      <li>Contact4</li>
-      <li>Contact5</li>
-      <li>Contact6</li>
-      <li>Contact</li>
-      <li>Contact1</li>
-      <li>Contact2</li>
-      <li>Contact3</li>
-      <li>Contact4</li>
-      <li>Contact5</li>
-      <li>Contact6</li>
+      <div>Contact</div>
+      <% Current.user.followers.each do |contact| %>
+        <li>
+          <%= contact.username %>
+        </li>
+      <% end %>
     </ul>
-    <div class="add-contact"><a>Add Contact</a></div>
+    <div class="add-contact"><%= link_to "Add Contact", contacts_path, class: "add-contacts-link" %></div>
     <div>
       <input class="search-contact" type="text" oninput="this.setAttribute('value',this.value)" placeholder="Search for a contact...">
     </div>
