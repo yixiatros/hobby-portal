@@ -7,7 +7,7 @@
       <div>Contact</div>
       <% Current.user.followers.each do |contact| %>
         <li>
-          <%= contact.username %>
+          <%= render contact %>
         </li>
       <% end %>
     </ul>

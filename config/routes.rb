@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  #resources :posts
   resources :rooms do
     resources :messages
   end
+
+  resources :users
 
   get 'rooms', to: 'rooms#index'
   post 'rooms/create', to: 'rooms#create'

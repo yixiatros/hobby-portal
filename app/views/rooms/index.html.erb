@@ -11,11 +11,7 @@
       <%= turbo_stream_from "users" %>
       <div id="users" class="contacts-info">
         <ul class="contact-list contact-list-room">
-          <% @users.each do |user| %>
-            <li>
-              <%= user.username %>
-            </li>
-          <% end %>
+          <%= render @users %>
         </ul>
       </div>
     </div>
@@ -32,7 +28,7 @@
   </div>
   <div id="current-room" class="col-md-9 bg-dark text-light">
     <% if @single_room %>
-      <h4 class="text-center"> <%= @single_room.name %> </h4>
+      <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
         <%= turbo_stream_from @single_room %>
         <div id="messages">
           <%= render @messages %>

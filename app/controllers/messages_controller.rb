@@ -2,9 +2,9 @@
 
 class MessagesController < ApplicationController
   def create
-    @message = Current.user.messages.create!(content: msg_params[:content], room_id: params[:room_id])
+    @message = Current.user.messages.create(content: msg_params[:content], room_id: params[:room_id])
 
-    redirect_to rooms_path, alert: 'Something went wrong. Could not send message.' unless @message.save
+    redirect_back fallback_location: root_path
   end
 
   private

@@ -50,7 +50,6 @@
 
 .contact-list li, .add-contact, .room-list-li {
     list-style: none;
-    padding: 0.75em 1em;
     border-radius: 1em;
 }
 .contact-list li:hover {
@@ -74,6 +73,7 @@
 .add-contact {
     z-index: 1000;
     border-radius: 0;
+    padding: 0.75em 1em;
     background-color: var(--Accent-1);
     color: black;
     text-align: center;
