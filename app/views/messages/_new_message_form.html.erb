@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag :rooms %>
+
+<div class="form-group message-form">
+  <%= form_with(model: [@single_room ,@message], remote: true, class: "d-flex" ) do |f| %>
+    <%= f.text_field :content, id: 'chat-text', class: "form-control message-content", autocomplete: 'off' %>
+    <%= f.submit "➢", data: { disable_with: false }, class: "send-button login-button btn" %>
+  <% end %>
+</div>

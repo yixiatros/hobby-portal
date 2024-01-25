@@ -2,6 +2,12 @@
 
 Rails.application.routes.draw do
   #resources :posts
+  resources :rooms do
+    resources :messages
+  end
+
+  get 'rooms', to: 'rooms#index'
+  post 'rooms/create', to: 'rooms#create'
 
   get 'contacts', to: 'contacts#index'
   post 'contacts/add', to: 'contacts#add'

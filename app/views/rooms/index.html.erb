@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag :rooms %>
+<%= javascript_include_tag "rooms.js" %>
+
+<div class="row">
+  <div class="contact-and-room-list col-md-3">
+    <div class="go-to-home">
+      <%= link_to "Home", root_path, class: "login-button btn" %>
+    </div>
+    <h4> Contacts </h4>
+    <div>
+      <%= turbo_stream_from "users" %>
+      <div id="users" class="contacts-info">
+        <ul class="contact-list contact-list-room">
+          <% @users.each do |user| %>
+            <li>
+              <%= user.username %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <h4> Rooms </h4>
+    <%= render partial: 'rooms/new_room_form' %>
+    <div>
+      <%= turbo_stream_from "rooms" %>
+      <div id="rooms">
+        <ul class="contact-list contact-list-room">
+          <%= render @rooms %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="current-room" class="col-md-9 bg-dark text-light">
+    <% if @single_room %>
+      <h4 class="text-center"> <%= @single_room.name %> </h4>
+        <%= turbo_stream_from @single_room %>
+        <div id="messages">
+          <%= render @messages %>
+        </div>
+        <%= render partial: 'messages/new_message_form' %>
+      <% end %>
+  </div>
+</div>

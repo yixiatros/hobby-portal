@@ -48,7 +48,7 @@
     border-top-right-radius: 1em;
 }
 
-.contact-list li, .add-contact {
+.contact-list li, .add-contact, .room-list-li {
     list-style: none;
     padding: 0.75em 1em;
     border-radius: 1em;
@@ -84,7 +84,6 @@
     border-radius: 0.4em;
     scale: 105%;
     font-weight: 800;
-
 }
 .add-contacts-link {
     text-decoration: none;

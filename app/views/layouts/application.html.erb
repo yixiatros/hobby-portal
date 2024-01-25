@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+
+    <style>
+      <%= ".msg-#{Current.user&.id}" %> {
+          background-color: var(--Accent-1) !important;
+          color: black !important;
+          padding: 10px;
+      }
+      <%= ".cont-#{Current.user&.id}" %> {
+          display: flex;
+          justify-content: flex-end
+      }
+    </style>
   </head>
 
   <body>
