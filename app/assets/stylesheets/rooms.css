@@ -1,10 +1,6 @@
 @import "application.css";
 @import "contacts.css";
 
-body {
-    overflow: hidden;
-}
-
 .go-to-home {
     display: flex;
     justify-content: center;
@@ -51,13 +47,26 @@ body {
     color: black;
 }
 
+.room-title {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    background-color: #212529;
+    margin-left: -0.7em;
+    border-bottom: 1px solid var(--Background);
+    padding-right: 6em;
+}
+
 .message-form {
     position: fixed;
     bottom: 0;
     width: 90%;
     background-color: #212529;
+    margin-left: -0.7em;
     padding-top: 1em;
     padding-right: 6em;
+    padding-left: 1em;
+    border-top: 1px solid var(--Background);
 }
 .send-button{
     margin-bottom: 1em;
@@ -67,7 +76,8 @@ body {
 
 .col-md-9 {
     height: 100vh;
-    padding-bottom: 5em;
+    padding-top: 4em;
+    padding-bottom: 6em;
     -ms-overflow-x: hidden;
     -ms-overflow-y: scroll;
     overflow-x: hidden;
@@ -86,15 +96,18 @@ body {
     outline: 1px solid var(--Hover);
 }
 
+.new-room-form {
+    position: relative;
+    width: auto;
+}
 .new-room-input {
-    display: block;
-    width: 800%;
+    position: absolute;
+    float: left;
+    width: 100%;
     background-color: var(--Hover);
 }
 .create-room-button-div {
-    display: block;
     margin-top: 3em;
-    margin-left: -1.1em;
 }
 
 .message-content {

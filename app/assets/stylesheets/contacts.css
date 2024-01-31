@@ -10,6 +10,8 @@
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     transition: 0.1s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .collapse-uncollapse:hover {
     scale: 110%;

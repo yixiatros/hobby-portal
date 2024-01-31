@@ -32,6 +32,18 @@ body {
     color: var(--Primary-Text);
     font-family: monospace;
 }
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+body::-webkit-scrollbar-track {
+    border-radius: 0.2em;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 0.2em;
+    background-color: var(--Accent-1);
+    outline: 1px solid var(--Hover);
+}
 
 .alert {
     position: relative;
@@ -172,7 +184,6 @@ body {
 
 .login-button, .logout-button {
     float: right;
-    display: inline-flex;
     padding: 10px 30px;
     text-align: center;
     transition: 0.5s;

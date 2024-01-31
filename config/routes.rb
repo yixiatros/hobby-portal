@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'notifications', to: 'notifications#index'
+
   resources :rooms do
     resources :messages
   end

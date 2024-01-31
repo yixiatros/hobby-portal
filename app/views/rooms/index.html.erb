@@ -1,6 +1,12 @@
 <%= stylesheet_link_tag :rooms %>
 <%= javascript_include_tag "rooms.js" %>
 
+<style>
+  body {
+      overflow: hidden;
+  }
+</style>
+
 <div class="row">
   <div class="contact-and-room-list col-md-3">
     <div class="go-to-home">
@@ -28,12 +34,14 @@
   </div>
   <div id="current-room" class="col-md-9 bg-dark text-light">
     <% if @single_room %>
-      <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
-        <%= turbo_stream_from @single_room %>
-        <div id="messages">
-          <%= render @messages %>
-        </div>
-        <%= render partial: 'messages/new_message_form' %>
-      <% end %>
+      <div class="room-title">
+        <h4 class="text-center"><%= @user&.username || @single_room.name %></h4>
+      </div>
+      <%= turbo_stream_from @single_room %>
+      <div id="messages">
+        <%= render @messages %>
+      </div>
+      <%= render partial: 'messages/new_message_form' %>
+    <% end %>
   </div>
 </div>

@@ -1,7 +1,8 @@
-<%= form_with model: @room, url: rooms_create_path, class: "d-flex" do |form| %>
+<%= form_with model: @room, url: rooms_create_path, class: "d-flex new-room-form" do |form| %>
   <div>
     <%= form.text_field :name, class: "new-room-input form-control", autocomplete: 'off' %>
   </div>
+  <br><br><br><br><br>
   <div class="create-room-button-div">
     <%= form.submit "Create Room", data: { disable_with: false }, class: "login-button btn"%>
   </div>

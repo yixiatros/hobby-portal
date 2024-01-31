@@ -4,12 +4,14 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :room
 
-  after_create_commit { broadcast_append_to self.room }
+  has_many :notification_mentions, as: :record, dependent: :destroy, class_name: 'Noticed::Event'
+
+  after_create_commit { broadcast_append_to room }
 
   def confirm_participant
-    if self.room.is_private
-      is_participant = Participant.where(user_id: self.user.id, room_id: self.room.id).first
-      throw :abort unless is_participant
-    end
+    return unless room.is_private
+
+    is_participant = Participant.where(user_id: user.id, room_id: room.id).first
+    throw :abort unless is_participant
   end
 end
