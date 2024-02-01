@@ -4,10 +4,12 @@
       <%= link_to 'ThreadVerse', root_path, class: "navbar-brand"%>
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav w-100">
-          <li class="search-box mx-auto">
-            <input class="search-input" type="text" oninput="this.setAttribute('value',this.value)">
-            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
-          </li>
+          <% if @is_search_bar == nil %>
+            <li class="search-box mx-auto">
+              <input class="search-input" type="text" oninput="this.setAttribute('value',this.value)">
+              <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+            </li>
+          <% end %>
           <li class="nav-item dropdown ms-auto mb-lg-8">
             <% if Current.user %>
               <div class="btn-group dropstart">

@@ -1,7 +1,23 @@
-<h3>Notifications</h3>
 
-<div>
+<%= render partial: "shared/navbar" %>
+
+<div class="notification-body">
+    <h3>Notifications</h3>
     <% @notifications.each do |notification| %>
-        <%= notification.event.params %>
+    <div class="notification-card">
+        <div class="notification-type">
+            <%= notification.event.params[:type] %>
+        </div>
+        <div class="notification-username">
+            <% notification.event.params[:chatroom].participants.each do |participant| %>
+                <% if participant.user != Current.user %>
+                    <span>from <%= participant.user.username %></span>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="notification-info">
+            <%= notification.event.params[:message] %>
+        </div>
+    </div>
     <% end %>
 </div>

@@ -16,18 +16,18 @@ class MessagesController < ApplicationController
   end
 
   def notify_recipient
-    # users_in_room = @message.joined_users
+    # notification = MessageNotifier.with(message: @message.content, chatroom: @message.room, type: 'message')
 
-    notification = MessageNotifier.with(message: @message.content, chatroom: @message.room, type: 'message')
+    # notification.deliver(Current.user)
 
-    notification.deliver(Current.user)
+    participants_in_room = @message.room.participants
 
-    # users_in_room.each do |user|
-    #   next if user.eql?(current_user)
+    participants_in_room.each do |participant|
+      next if participant.user.eql?(Current.user)
 
-    #   notification = MessageNotifier.with(message: @message.content, chatroom: @message.room, type: 'message')
+      notification = MessageNotifier.with(message: @message.content, chatroom: @message.room, type: 'message')
 
-    #   notification.deliver(user)
-    # end
+      notification.deliver(participant.user)
+    end
   end
 end

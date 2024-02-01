@@ -1,0 +1,25 @@
+@import "application.css";
+
+.notification-body {
+    margin: 1em;
+}
+
+.notification-card {
+    background-color: var(--Hover);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.notification-type {
+    text-transform: capitalize;
+    display: inline;
+}
+.notification-username {
+    display: inline;
+}
+
+.notification-info {
+    display: block;
+    margin-top: 1em;
+}
