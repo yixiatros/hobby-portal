@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-
   # GET /posts or /posts.json
   def index
     @posts = Post.all
   end
 
   # GET /posts/1/edit
-  def edit
+  def edit; end
+
+  def search_post
+    @posts = Post.where('lower(content) like ?', "%#{params[:content].downcase}%")
+    puts @posts
+    render 'home/index'
   end
 
   # POST /posts
@@ -52,5 +56,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:attachment, :content, :user_id)
   end
-
 end

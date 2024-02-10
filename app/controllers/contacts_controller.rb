@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
-
   # Get /contacts
   def index
-    @users = User.all_except(Current.user)
+    @users = User.all_except(Current.user.followees)
   end
 
   # Post /contacts/add

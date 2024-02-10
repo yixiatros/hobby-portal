@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get '/search/:search_term', to: 'posts#search_post'
+
   get 'rooms', to: 'rooms#index'
   post 'rooms/create', to: 'rooms#create'
 

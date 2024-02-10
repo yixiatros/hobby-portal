@@ -6,8 +6,12 @@
         <ul class="navbar-nav w-100">
           <% if @is_search_bar == nil %>
             <li class="search-box mx-auto">
-              <input class="search-input" type="text" oninput="this.setAttribute('value',this.value)">
-              <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+              <%= form_with url: "/search/:search_term", method: :get do |form| %>
+                <%= form.text_field :content, class: "search-input", oninput: "this.setAttribute('value',this.value)" %>
+                <%= form.button nil, class: "search-button" do %>
+                  <i class="search-icon fa fa-search"></i>
+                <% end %>
+              <% end %>
             </li>
           <% end %>
           <li class="nav-item dropdown ms-auto mb-lg-8">

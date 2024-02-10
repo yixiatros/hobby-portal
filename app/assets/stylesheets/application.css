@@ -172,7 +172,6 @@ body::-webkit-scrollbar-thumb {
 .search-button {
     display: inline;
     float: none;
-    margin-inline-start: -2em;
     background: none;
     border: none;
     color: var(--Primary-Text);
@@ -180,6 +179,10 @@ body::-webkit-scrollbar-thumb {
 }
 .search-button:focus {
     color: var(--Secondary-Text);
+}
+.search-icon {
+    display: inline;
+    margin-inline-start: -5em;
 }
 
 .login-button, .logout-button {
