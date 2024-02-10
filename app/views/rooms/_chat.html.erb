@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag :rooms %>
+<%= javascript_include_tag "rooms.js" %>
+
+<% if @single_room %>
+    <div class="row">
+        <div id="current-room" class="message-room bg-dark text-light">
+            <div class="room-title">
+                <h4 class="text-center"><%= @user&.username || @single_room.name %></h4>
+            </div>
+            <%= turbo_stream_from @single_room %>
+            <div id="messages">
+                <%= render @messages %>
+            </div>
+            <%= render partial: 'messages/new_message_form' %>
+        </div>
+    </div>
+<% end %>

@@ -16,6 +16,7 @@
                 <button type="button" class="login-button btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"><%= Current.user.username %></button>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li><button type="button" class="dropdown-item">Profile</button></li>
+                  <li><%= link_to "Notifications", notifications_path, class: "dropdown-item" %></li>
                   <li><%= link_to "Change Password", edit_password_path, class: "dropdown-item" %></li>
                   <li><%= button_to "Log Out", logout_path, class: "dropdown-item", type: "button", method: :delete %></li>
                 </ul>
@@ -32,4 +33,17 @@
 
 <% if Current.user %>
   <%= render partial: 'contacts/contacts' %>
+
+  <!--<div class="messages-float">
+    <div style="overflow: hidden;">
+      <iframe class="messages-iframe" src="http://127.0.0.1:3000/users/5" scrolling="no"></iframe>
+    </div>
+  </div>-->
+
+  <% if @single_room %>
+    <div class="messages-float">
+      <%= render partial: 'rooms/chat' %>
+    </div>
+  <% end %>
+
 <% end %>

@@ -228,3 +228,17 @@ body::-webkit-scrollbar-thumb {
 .user-info {
     margin-right: 2.5em;
 }
+
+.messages-float{
+    left: 1em;
+    border: 0px none;
+    height: 50%;
+    position: fixed;
+    width: 30%;
+    overflow: hidden;
+    bottom: 1em;
+    z-index: 99000;
+    border-top: 2px solid var(--Accent-1);
+    border-bottom: 2px solid var(--Accent-1);
+    border-radius: 1em;
+}

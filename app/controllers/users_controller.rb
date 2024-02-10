@@ -11,7 +11,12 @@ class UsersController < ApplicationController
     @single_room = Room.where(name: @room_name).first || Room.create_private_room([@user, Current.user], @room_name)
     @messages = @single_room.messages
 
-    render 'rooms/index'
+    @posts = Post.all
+    @post = Post.new
+
+    # @user = User.find_by(id: session[:user_id]) if session[:user_id]
+
+    render 'home/index'
   end
 
   private

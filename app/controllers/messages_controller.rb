@@ -16,10 +16,6 @@ class MessagesController < ApplicationController
   end
 
   def notify_recipient
-    # notification = MessageNotifier.with(message: @message.content, chatroom: @message.room, type: 'message')
-
-    # notification.deliver(Current.user)
-
     participants_in_room = @message.room.participants
 
     participants_in_room.each do |participant|
