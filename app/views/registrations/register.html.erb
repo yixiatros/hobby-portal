@@ -24,8 +24,6 @@
 
   <div class="right">
     <span class="loginwith">Sign in with<br />social network</span>
-    <button class="social-signin facebook">Log in with facebook</button>
-    <button class="social-signin X">Log in with X</button>
     <%= button_to "Log in with Google+", "/auth/google_oauth2", method: :post, data: {turbo: "false"}, class: "social-signin google" %>
   </div>
 
