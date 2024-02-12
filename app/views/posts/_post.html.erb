@@ -1,25 +1,28 @@
 <%= stylesheet_link_tag :post %>
 
-<div class="middle-of-screen">
-  <div class="card" id="<%= dom_id post %>">
-    <div class="top">
-      <div class="user_details">
-        <h3><%= post.user.username %>
-          <br>
-          <span class="hour">
-            <%= post.created_at.in_time_zone(+2).strftime("Posted on %B %d, %Y at %H:%M") %>
-          </span>
-        </h3>
+<% if post %>
+  <div class="middle-of-screen">
+    <div class="card" id="<%= dom_id post %>">
+      <div class="top">
+        <div class="user_details">
+          <h3><%= post.user.username %>
+            <br>
+              <span class="hour">
+                <%= post.created_at.in_time_zone(+2).strftime("Posted on %B %d, %Y at %H:%M") %>
+              </span>
+
+          </h3>
+        </div>
       </div>
-    </div>
-    <h4 class="message"><%= post.content %></h4>
-    <% if post.attachment? %>
-      <div class="imgBg">
-        <img src="<%= post.attachment %>" alt="posted-image" class="coverFull">
+      <h4 class="message"><%= post.content %></h4>
+      <% if post.attachment? %>
+        <div class="imgBg">
+          <img src="<%= post.attachment %>" alt="posted-image" class="coverFull">
+        </div>
+      <% end %>
+      <div class="btns">
       </div>
-    <% end %>
-    <div class="btns">
+      <div class="border"></div>
     </div>
-    <div class="border"></div>
-  </div>
-</div>
+  </div>  
+<% end %>

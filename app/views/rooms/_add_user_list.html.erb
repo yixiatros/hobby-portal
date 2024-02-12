@@ -1,0 +1,9 @@
+<%= form_with url: rooms_create_private_path do |f| %>
+    <% Current.user.followers.each do |contact| %>
+        <div>
+            <%= f.check_box contact.username %>
+            <%= f.label contact.username, contact.username %>
+        </div>
+    <% end %>
+    <%= f.submit "Add", disable_with: 'Submiting...' %>
+<% end %>

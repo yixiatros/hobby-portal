@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'rooms', to: 'rooms#index'
   post 'rooms/create', to: 'rooms#create'
+  post 'rooms/create_private', to: 'rooms#create_private'
 
   get 'contacts', to: 'contacts#index'
   post 'contacts/add', to: 'contacts#add'
