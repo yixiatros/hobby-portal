@@ -2,12 +2,18 @@
 
 <div class="contact-container">
   <div class="collapse-uncollapse"><a id="collapse-uncollapse" onclick="collapse()">▼</a></div>
-  <div id="contacts-info">
+  <div id="contacts-info" style="display: block;">
     <ul id="contact-list" class="contact-list">
       <div>Contact</div>
       <% Current.user.followers.each do |contact| %>
         <li>
           <%= render contact %>
+        </li>
+      <% end %>
+      <div class="group-chat-list">Groups</div>
+      <% Room.get_all_groups_of_user(Current.user).each do |r| %>
+        <li class="group-chat-list-item">
+          <%= link_to r.name, r, class: "group-chat-list-item-btn btn"%>
         </li>
       <% end %>
     </ul>

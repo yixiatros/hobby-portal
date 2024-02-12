@@ -45,8 +45,12 @@ class RoomsController < ApplicationController
     @room = Room.new
     @message = Message.new
     @messages = @single_room.messages
+    @room_name = @single_room.name
 
-    render :index
+    @posts = Post.all
+    @post = Post.new
+
+    render 'home/index'
   end
 
   private

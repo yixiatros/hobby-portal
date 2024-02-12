@@ -1,9 +1,19 @@
-<%= form_with url: rooms_create_private_path do |f| %>
-    <% Current.user.followers.each do |contact| %>
-        <div>
-            <%= f.check_box contact.username %>
-            <%= f.label contact.username, contact.username %>
-        </div>
+<%= javascript_include_tag "rooms.js" %>
+
+<div id="add-user-content" style="display: none;">
+    <%= form_with url: rooms_create_private_path do |f| %>
+        <% Current.user.followers.each do |contact| %>
+            <% if contact.id != @user.id %>
+                <div>
+                    <%= f.check_box contact.username %>
+                    <%= f.label contact.username, contact.username %>
+                </div>
+            <% else %>
+                <%= f.hidden_field contact.username, :value => "1" %>
+            <% end %>
+        <% end %>
+        <%= f.button nil, class: "btn btn-dark" do %>
+            <i class="fa fa-plus"></i>
+        <% end %>
     <% end %>
-    <%= f.submit "Add", disable_with: 'Submiting...' %>
-<% end %>
+</div>

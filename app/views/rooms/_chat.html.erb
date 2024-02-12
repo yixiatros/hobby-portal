@@ -7,14 +7,13 @@
             <div class="room-title">
                 <h4 class="text-center">
                     <%= @user&.username || @single_room.name %>
-                    <Button class="add-user-button btn btn-dark"><i class="fa fa-user-plus"></i></Button>
-                    <%#= form_with model: @room, url: rooms_create_private_path, class: "add-user-form" do |form| %>
-                        <%#= form.button nil, data: { disable_with: false }, class: "add-user-button btn btn-dark" do %>
-<!--                            <i class="fa fa-user-plus"></i>-->
-                        <%# end %>
-                    <%# end %>
+                    <% if @user %>
+                        <button id="add-user-button" class="add-user-button btn btn-dark" onclick="addUser()"><i class="fa fa-user-plus"></i></Button>
+                    <% end %>
                 </h4>
-                <%= render partial: 'rooms/add_user_list' %>
+                <% if @user %>
+                    <%= render partial: 'rooms/add_user_list' %>
+                <% end %>
             </div>
             <%= turbo_stream_from @single_room %>
             <div id="messages">
