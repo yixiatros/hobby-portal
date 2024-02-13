@@ -28,11 +28,16 @@ class RoomsController < ApplicationController
       end
     end
 
+    if @parts.count <= 2
+      redirect_to root_path,
+                  alert: 'You need to add more users to the room, the room was not created.'
+    end
+
     get_name(@parts)
     @room = Room.create_private_room(@parts, @room_name)
 
     if @room.save
-      redirect_to rooms_path, notice: 'Room created.'
+      redirect_to @room, notice: 'Room created.'
     else
       redirect_to root_path, alert: 'Something went wrong, the room was not created.'
     end
