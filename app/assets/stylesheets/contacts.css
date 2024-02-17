@@ -72,6 +72,16 @@
     outline: 1px solid var(--Hover);
 }
 
+.group-chat-list{
+    margin-top: 1em;
+}
+.group-chat-list-item {
+    padding: 0.2em;
+}
+.group-chat-list-item-btn {
+    color: var(--Primary-Text);
+}
+
 .add-contact {
     z-index: 1000;
     border-radius: 0;

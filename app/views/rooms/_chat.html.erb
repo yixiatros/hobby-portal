@@ -5,7 +5,15 @@
     <div class="row">
         <div id="current-room" class="message-room bg-dark text-light">
             <div class="room-title">
-                <h4 class="text-center"><%= @user&.username || @single_room.name %></h4>
+                <h4 class="text-center">
+                    <%= @user&.username || @single_room.name %>
+                    <% if @user %>
+                        <button id="add-user-button" class="add-user-button btn btn-dark" onclick="addUser()"><i class="fa fa-user-plus"></i></Button>
+                    <% end %>
+                </h4>
+                <% if @user %>
+                    <%= render partial: 'rooms/add_user_list' %>
+                <% end %>
             </div>
             <%= turbo_stream_from @single_room %>
             <div id="messages">
