@@ -18,5 +18,5 @@ class User < ApplicationRecord
   validates_presence_of :username, :password_digest
   validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'must be a valid email address' }
 
-  after_create_commit { broadcast_append_to 'users' }
+  # after_create_commit { broadcast_append_to 'users' }
 end

@@ -6,7 +6,7 @@ class Message < ApplicationRecord
 
   has_many :notification_mentions, as: :record, dependent: :destroy, class_name: 'Noticed::Event'
 
-  after_create_commit { broadcast_append_to room }
+  # after_create_commit { broadcast_append_to room }
 
   def confirm_participant
     return unless room.is_private
