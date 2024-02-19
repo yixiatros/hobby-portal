@@ -73,5 +73,7 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
+Run rake db:migrate
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
